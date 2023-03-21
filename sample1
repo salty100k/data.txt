@@ -1,0 +1,14 @@
+const data = "This is some example data.";
+
+const options = {
+  method: "PUT",
+  headers: {
+    "Content-Type": "text/plain"
+  },
+  body: data
+};
+
+fetch("https://api.github.com/repos/<username>/<repository>/contents/data.txt", options)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
